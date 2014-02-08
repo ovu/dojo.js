@@ -28,4 +28,15 @@ define(["session2"], function(gameOfLife) {
       expect(gameOfLife.evaluate(0, 6)).toBe(0);
     });
   });
+
+  describe("init", function() {
+    it("should initalize to the correct dimensions", function() {
+      expect(gameOfLife.gameField.length).toBe(0);
+      gameOfLife.init(5); // initialize a 5*5 game field
+      expect(gameOfLife.gameField.length).toBe(5);
+      gameOfLife.gameField.forEach(function(row) {
+        expect(row.length).toBe(5);
+      });
+    });
+  });
 });
