@@ -1,5 +1,6 @@
 define(function(require) {
   var gameOfLife = {};
+  var INVALID_PARAMETER_EXCEPTION = "Invalid parameter";
   var rules = [[0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0]];
   
   gameOfLife.gameField = [];
@@ -8,6 +9,10 @@ define(function(require) {
   };
 
   gameOfLife.init = function(size) {
+    if (typeof size === 'undefined' || size < 0) {
+      throw INVALID_PARAMETER_EXCEPTION;
+    }
+
     var rowSize = size; // remember the row length... oops
     while(size--){
       gameOfLife.gameField.push(new Array(rowSize));
@@ -20,7 +25,6 @@ define(function(require) {
         cell = (Math.random() < 0.5) ? 1: 0;
       });
     });
-    
   };
 
   return gameOfLife;
