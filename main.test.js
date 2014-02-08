@@ -17,7 +17,13 @@ require.config({
   //  "pajamas": "../bower_components/pajamas/src/pajamas",
   //  "q": "../bower_components/q/q",
   //  "squire": "../bower_components/squire/src/Squire"
+  },
+    "shim": {
+      underscore: {
+        exports: '_'
+      }
   }
+
 });
 
 define("module", [], function () {

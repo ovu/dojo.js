@@ -1,4 +1,14 @@
-define(["session2"], function(gameOfLife) {
+define(["session2", "underscore"], function(gameOfLife, _) {
+
+  describe("rules for alive cell", function() {
+    // add a custom matcher for deep equals checking
+    this.addMatchers({
+      toDeepEqual: function(expected) {
+        return _.isEqual(this.actual, expected);
+      }
+    });
+  });
+  
   describe("rules for alive cell", function() {
     it("should kill cell with less than two neighbors", function() {
       expect(gameOfLife.evaluate(1, 0)).toBe(0);
