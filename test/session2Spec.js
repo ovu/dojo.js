@@ -41,7 +41,7 @@ define(["session2"], function(gameOfLife) {
   });
 
   describe("populate game field", function() {
-    it("should initalize a random playing field", function() {
+    it("should populate a random playing field", function() {
       // initial state should be empty
       gameOfLife.gameField.forEach(function(row) {
         row.forEach(function(cell) {
@@ -49,7 +49,7 @@ define(["session2"], function(gameOfLife) {
         });
       });
 
-      gameOfLife.initalize();
+      gameOfLife.populate();
 
       // initial state should be empty
       gameOfLife.gameField.forEach(function(row) {
