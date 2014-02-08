@@ -43,6 +43,11 @@ define(["session2"], function(gameOfLife) {
         gameOfLife.init(-1);})
       .toThrow(new Error ("Invalid parameter"));
     });
+    it("should throw an exception when the init receive an undefined value", function() {
+      expect(function () {
+        gameOfLife.init(undefined);})
+      .toThrow(new Error ("Invalid parameter"));
+    });    
   });
 
   describe("populate game field", function() {
