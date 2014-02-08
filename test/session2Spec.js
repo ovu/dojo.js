@@ -38,6 +38,11 @@ define(["session2"], function(gameOfLife) {
         expect(row.length).toBe(5);
       });
     });
+    it("should throw an exception when the init receive invalid values ", function() {
+      expect(function () {
+        gameOfLife.init(-1);})
+      .toThrow(new Error ("Invalid parameter"));
+    });
   });
 
   describe("populate game field", function() {
@@ -59,4 +64,5 @@ define(["session2"], function(gameOfLife) {
       });
     });
   });
-});
+
+}); 

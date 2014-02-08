@@ -14,5 +14,14 @@ define(function(require) {
     }
   };
 
+  gameOfLife.populate = function () {
+    gameOfLife.gameField.forEach(function (row){
+       row.forEach(function (cell) {
+        cell = (Math.random() < 0.5) ? 1: 0;
+      });
+    });
+    
+  };
+
   return gameOfLife;
 });
