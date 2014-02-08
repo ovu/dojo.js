@@ -39,4 +39,24 @@ define(["session2"], function(gameOfLife) {
       });
     });
   });
+
+  describe("populate game field", function() {
+    it("should initalize a random playing field", function() {
+      // initial state should be empty
+      gameOfLife.gameField.forEach(function(row) {
+        row.forEach(function(cell) {
+          expect(cell).toBe(undefined);
+        });
+      });
+
+      gameOfLife.initalize();
+
+      // initial state should be empty
+      gameOfLife.gameField.forEach(function(row) {
+        row.forEach(function(cell) {
+          expect(cell).not.toBe(undefined);
+        });
+      });
+    });
+  });
 });
